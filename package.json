@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "testcafe chrome index.js",
-    "app": "npm --prefix platform run example:start"
+    "test": "testcafe chrome index.js --app \"npm run example-app\"",
+    "example-app": "http-server platform/example-dist -s"
   }
 }

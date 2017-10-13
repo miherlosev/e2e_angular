@@ -7,7 +7,7 @@ const bookDetailPage   = new BookDetailPage();
 const myCollectionPage = new MyCollectionPage();
 
 fixture `Book Collection`
-    .page('http://localhost:4200')
+    .page('http://localhost:8080')
     .beforeEach(async t => {
         await waitForAngular();
 

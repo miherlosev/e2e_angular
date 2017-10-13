@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test": "testcafe chrome index.js",
+    "app": "npm --prefix platform run example:start"
+  }
+}

@@ -22,18 +22,10 @@ class BasePage {
         this.openToolbarBtn = this.toolbar.find('button');
     }
 
-    async _openToolbar () {
-        await t.click(this.openToolbarBtn);
-    }
-
     async navigateToBrowseBooksPage () {
-        await this._openToolbar();
-        await t.click(this.sidenav.browseBooksNavItem);
-    }
-
-    async navigateToMyCollectionPage () {
-        await this._openToolbar();
-        await t.click(this.sidenav.myCollectionNavItem);
+        await t
+            .click(this.openToolbarBtn)
+            .click(this.sidenav.browseBooksNavItem);
     }
 }
 
@@ -45,27 +37,3 @@ export class FindBookPage extends BasePage {
         this.bookPreviews = AngularSelector('bc-book-preview');
     }
 }
-
-export class BookDetailPage extends BasePage {
-    constructor () {
-        super();
-
-        this.title = AngularSelector('md-card-title');
-
-        const bookActionsContainer = AngularSelector('md-card-actions');
-
-        this.actions = {
-            addToCollection:      bookActionsContainer.find('button').withText('Add Book to Collection'),
-            removeFromCollection: bookActionsContainer.find('button').withText('Remove Book from Collection')
-        };
-    }
-}
-
-export class MyCollectionPage extends BasePage {
-    constructor () {
-        super();
-
-        this.bookPreviews = AngularSelector('bc-book-preview');
-    }
-}
-

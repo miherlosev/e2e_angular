@@ -19,6 +19,6 @@ test("find a book", async t => {
     await findBookPage.navigateToBrowseBooksPage();
 
     await t
-        .typeText(findBookPage.searchInput, 'The Hanger Games')
+        .typeText(findBookPage.searchInput, 'The Hunger Games')
         .expect(findBookPage.bookPreviews.count).gt(0);
 });
